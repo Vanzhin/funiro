@@ -1,0 +1,116 @@
+.footer__body {
+  border-top: 1px solid #d8d8d8;
+  display: grid;
+  grid-template-columns: 250px 1fr 290px;
+  padding-top: calc(30px + (80 - 30) * ((100vw - 320 * 1px) / (1270 - 320)));
+  padding-bottom: calc(30px + (60 - 30) * ((100vw - 320 * 1px) / (1270 - 320)));
+  column-gap: calc(0px + (80 - 0) * ((100vw - 320 * 1px) / (1270 - 320)));
+}
+.footer__main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.footer__logo {
+  margin: 0px 0px calc(16 / 24 * 1em) 0px;
+}
+.footer__text {
+  color: #898989;
+  line-height: 150%;
+}
+.footer__text:not(:last-child) {
+  margin: 0px 0px 1em 0px;
+}
+.footer ._footer-title {
+  font-size: calc(20px + (24 - 20) * ((100vw - 320 * 1px) / (1270 - 320)));
+  line-height: calc(29 / 24 * 100%);
+  color: #000;
+  font-family: Gilroy-Bold;
+}
+.contacts-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.contacts-footer__item {
+  display: inline-flex;
+  align-items: center;
+  color: #898989;
+  line-height: 150%;
+  transition: color 0.3s ease 0s;
+}
+.contacts-footer__item::before {
+  margin: 0 8px 0 0;
+}
+.contacts-footer__item:not(:last-child) {
+  margin-bottom: calc(20px + (24 - 20) * ((100vw - 320 * 1px) / (1270 - 320)));
+}
+@media (any-hover: hover) {
+  .contacts-footer__item:hover {
+    color: #E89F71;
+  }
+}
+@media (min-width: 767.98px) {
+  .menu-footer {
+    display: flex;
+  }
+}
+@media (min-width: 767.98px) {
+  .menu-footer__column {
+    flex: 0 1 33.33%;
+  }
+}
+.menu-footer__title {
+  cursor: default;
+  margin: 0 0 calc(16 / 24 * 1em) 0;
+}
+.menu-footer__list li:not(:last-child) {
+  margin: 0 0 15px 0;
+}
+.menu-footer__link {
+  color: #616161;
+  transition: color 0.3s ease 0s;
+  line-height: 120%;
+  font-family: Gilroy-Medium;
+}
+@media (any-hover: hover) {
+  .menu-footer__link:hover {
+    color: #E89F71;
+  }
+}
+.subscribe__title {
+  margin: 0 0 calc(16 / 24 * 1em) 0;
+}
+.subscribe__form {
+  display: flex;
+  position: relative;
+}
+.subscribe__btn {
+  flex: 0 0 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  background-color: #E89F71;
+  color: #ffffff;
+  margin: 0 0 0 4px;
+  transition: background-color 0.3s ease 0s;
+}
+@media (any-hover: hover) {
+  .subscribe__btn:hover {
+    background-color: #898989;
+  }
+}
+.subscribe__input {
+  width: 100%;
+  padding: 0 12px;
+  background-color: #f4f5f7;
+  color: #828282;
+}
+.subscribe__input:focus {
+  outline: none;
+}
+.subscribe__input:focus::placeholder {
+  opacity: 0;
+}
