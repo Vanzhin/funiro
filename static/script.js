@@ -10,26 +10,32 @@ new Vue({
     render: h => h(App),
 }).$mount('#app');
 
-const swiper = new Swiper('.swiper-container', {
+const swiper = new Swiper('.main-slider__slider', {
     // Optional parameters
     direction: 'horizontal',
     loop: true,
+    observer: true,
+    observerParents: true,
+    slidesPerView: 1,
+    spaceBetween: 32,
+    watchOverflow: true,
+    speed: 800,
+    preloadImages: false,
+    parallax: true,
   
     // If we need pagination
     pagination: {
-      el: '.swiper-pagination',
+      el: '.controls-slider-main__dots',
+      clickable: 'true',
     },
   
     // Navigation arrows
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: '.slider-arrow_next',
+      prevEl: '.slider-arrow_prev',
     },
+
   
-    // And if we need scrollbar
-    scrollbar: {
-      el: '.swiper-scrollbar',
-    },
   });
 
 // smoth transition href
