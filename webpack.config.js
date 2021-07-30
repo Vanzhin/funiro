@@ -137,8 +137,8 @@ module.exports = {
 				to: "./static/img"
 			}, 
 			{
-				from: './static/swiper-bundle.min.js',
-				to: "./sideJs"
+				from: './static/sideJs/',
+				to: "./sideJs/"
 			}]
 
 		}),

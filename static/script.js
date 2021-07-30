@@ -38,6 +38,10 @@ const swiper = new Swiper('.slider-main__body', {
   
   });
 
+// dynamic adaptive initialization
+    const da = new DynamicAdapt("max");
+    da.init();
+
 // smoth transition href
 $(function () {
     $('a[href*=#]').click(function () {
