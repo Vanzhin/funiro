@@ -10,7 +10,7 @@ new Vue({
     render: h => h(App),
 }).$mount('#app');
 
-const swiper = new Swiper('.main-slider__slider', {
+const swiper = new Swiper('.slider-main__body', {
     // Optional parameters
     direction: 'horizontal',
     loop: true,
