@@ -5,6 +5,7 @@
      <main class="page">
             <v-main-slider></v-main-slider>
             <v-advantages></v-advantages>
+            <v-products></v-products>
         </main>
      <v-footer></v-footer>
      </div>
@@ -19,6 +20,7 @@ import VMainSlider from './components/VMainSlider.vue'
 import VHeader from './components/VHeader.vue'
 import VFooter from './components/VFooter.vue'
 import VAdvantages from './components/VAdvantages.vue'
+import VProducts from './components/VProducts.vue'
 
 
 
@@ -30,6 +32,7 @@ export default {
         VFooter,
         VMainSlider,
         VAdvantages,
+        VProducts,
 	},
 	data(){
 		
