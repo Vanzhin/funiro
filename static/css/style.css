@@ -215,11 +215,11 @@ a {
   min-height: 60px;
 }
 @media (any-hover: hover) {
-  .header._scroll .header__wrap {
+  .header._scroll .header__wrap:hover {
     background-color: rgba(255, 255, 255, 0.9);
   }
 }
-@media (max-width: 767.98px) {
+@media (ma-width: 767.98px) {
   .header._scroll .header__wrap {
     min-height: 70px;
   }
@@ -790,11 +790,11 @@ a {
 .page__main-slider {
   background: #FCF8F3;
 }
-.main-slider__container {
+.page__main-slider .main-slider__container {
   position: relative;
 }
 @media (min-width: 991.98px) {
-  .main-slider__container::before {
+  .page__main-slider .main-slider__container::before {
     content: "";
     background: #f9f1e7;
     position: absolute;
@@ -804,47 +804,47 @@ a {
     height: 100%;
   }
 }
-.main-slider__body {
+.page__main-slider .main-slider__body {
   padding: 140px 0 0 0;
   position: relative;
   z-index: 2;
 }
 @media (max-width: 991.98px) {
-  .main-slider__body {
+  .page__main-slider .main-slider__body {
     padding: 80px 0 0 0;
   }
 }
 @media (max-width: 767.98px) {
-  .main-slider__body {
+  .page__main-slider .main-slider__body {
     padding: 70px 0 0 0;
   }
 }
 @media (min-width: 991.98px) {
-  .main-slider__body {
+  .page__main-slider .main-slider__body {
     display: flex;
   }
 }
-.main-slider__content {
+.page__main-slider .main-slider__content {
   align-self: flex-start;
   flex: 0 0 calc(494/(1270 - 2 * 15) * 100%);
   margin-bottom: calc(15px + (80 - 15) * ((100vw - 320 * 1px) / (1270 - 320)));
 }
 @media (max-width: 991.98px) {
-  .main-slider__content {
+  .page__main-slider .main-slider__content {
     margin: 0 -15px;
   }
 }
-.main-slider__slider {
+.page__main-slider .main-slider__slider {
   flex: 1 1 auto;
   min-width: 0;
   align-self: flex-end;
 }
 @media (min-width: 991.98px) {
-  .main-slider__slider {
+  .page__main-slider .main-slider__slider {
     padding: 0 0 0 32px;
   }
 }
-.content-main {
+.page__main-slider .content-main {
   position: relative;
   z-index: 5;
   padding-left: 15px;
@@ -855,35 +855,35 @@ a {
   background: rgba(255, 255, 255, 0.72);
 }
 @media (min-width: 991.98px) {
-  .content-main {
+  .page__main-slider .content-main {
     padding: calc(1px + (60 - 1) * ((100vw - 320 * 1px) / (1270 - 320)));
     background: rgba(255, 255, 255, 0.9);
   }
   @supports ((-webkit-backdrop-filter: blur(31px)) or (backdrop-filter: blur(31px))) {
-    .content-main {
+    .page__main-slider .content-main {
       background: rgba(255, 255, 255, 0.72);
       backdrop-filter: blur(31px);
     }
   }
 }
-.content-main__title {
+.page__main-slider .content-main__title {
   font-size: calc(24px + (56 - 24) * ((100vw - 320 * 1px) / (1270 - 320)));
   font-family: Gilroy-Bold;
   line-height: 120%;
 }
-.content-main__title:not(:last-child) {
+.page__main-slider .content-main__title:not(:last-child) {
   margin: 0 0 calc(16 / 56 * 1em) 0;
 }
-.content-main__text {
+.page__main-slider .content-main__text {
   font-size: calc(16px + (20 - 16) * ((100vw - 320 * 1px) / (1270 - 320)));
   font-family: Gilroy-Medium;
   color: #898989;
   line-height: 150%;
 }
-.content-main__text:not(:last-child) {
+.page__main-slider .content-main__text:not(:last-child) {
   margin: 0 0 calc(48 / 20 * 1em) 0;
 }
-.content-main__button {
+.page__main-slider .content-main__button {
   min-height: calc(45px + (78 - 45) * ((100vw - 320 * 1px) / (1270 - 320)));
   font-size: calc(16px + (20 - 16) * ((100vw - 320 * 1px) / (1270 - 320)));
   background-color: #E89F71;
@@ -891,55 +891,55 @@ a {
   width: 100%;
 }
 @media (any-hover: hover) {
-  .content-main__button:hover {
+  .page__main-slider .content-main__button:hover {
     background-color: #966749;
   }
 }
-.slider-main {
+.page__main-slider .slider-main {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
 @media (max-width: 991.98px) {
-  .slider-main {
+  .page__main-slider .slider-main {
     align-items: stretch;
     flex-direction: column-reverse;
   }
 }
-.slider-main__controls {
+.page__main-slider .slider-main__controls {
   align-self: stretch;
   margin: 0 0 20px 0;
 }
 @media (max-width: 991.98px) {
-  .slider-main__controls {
+  .page__main-slider .slider-main__controls {
     margin: 10px 0 10px 0;
   }
 }
-.slider-main__body {
+.page__main-slider .slider-main__body {
   overflow: visible;
 }
 @media (min-width: 991.98px) {
-  .slider-main__body {
+  .page__main-slider .slider-main__body {
     width: calc(290px + (934 - 290) * ((100vw - 320 * 1px) / (1270 - 320)));
   }
 }
 @media (max-width: 991.98px) {
-  .slider-main__body {
+  .page__main-slider .slider-main__body {
     margin: 0 -15px;
   }
 }
-.slider-main__image {
+.page__main-slider .slider-main__image {
   padding: 0 0 59.1% 0;
 }
 @media (max-width: 991.98px) {
-  .slider-main__image {
+  .page__main-slider .slider-main__image {
     padding: 0 0 0 0 ;
   }
-  .slider-main__image img {
+  .page__main-slider .slider-main__image img {
     position: relative;
   }
 }
-.slider-main__content {
+.page__main-slider .slider-main__content {
   color: inherit;
   min-width: 295px;
   max-height: 300px;
@@ -950,35 +950,35 @@ a {
   background: rgba(255, 255, 255, 0.9);
 }
 @media (min-width: 767.98px) {
-  .slider-main__content {
+  .page__main-slider .slider-main__content {
     position: absolute;
     min-width: 350px;
     bottom: calc(0px + (40 - 0) * ((100vw - 320 * 1px) / (1270 - 320)));
     right: calc(0px + (40 - 0) * ((100vw - 320 * 1px) / (1270 - 320)));
   }
   @supports ((-webkit-backdrop-filter: blur(31px)) or (backdrop-filter: blur(31px))) {
-    .slider-main__content {
+    .page__main-slider .slider-main__content {
       background: rgba(255, 255, 255, 0.72);
       backdrop-filter: blur(31px);
     }
   }
 }
-.slider-main__title {
+.page__main-slider .slider-main__title {
   font-size: calc(22px + (28 - 22) * ((100vw - 320 * 1px) / (1270 - 320)));
   font-family: Gilroy-SemiBold;
   line-height: 120%;
 }
-.slider-main__title:not(:last-child) {
+.page__main-slider .slider-main__title:not(:last-child) {
   margin: 0 0 calc(4 / 28 * 1em) 0;
 }
-.slider-main__text {
+.page__main-slider .slider-main__text {
   line-height: 150%;
   color: #898989;
 }
-.slider-main__text:not(:last-child) {
+.page__main-slider .slider-main__text:not(:last-child) {
   margin: 0 0 calc(8 / 16 * 1em) 0;
 }
-.slider-main__price {
+.page__main-slider .slider-main__price {
   display: flex;
   flex-direction: row-reverse;
   line-height: 150%;
@@ -987,29 +987,73 @@ a {
   justify-content: space-between;
   font-size: calc(16px + (20 - 16) * ((100vw - 320 * 1px) / (1270 - 320)));
 }
-.slider-main__price::before {
+.page__main-slider .slider-main__price::before {
   margin: 0 0 0 10px;
   font-size: 12px;
 }
-.controls-slider-main {
+.page__main-slider .controls-slider-main {
   display: flex;
   align-items: center;
 }
-.controls-slider-main__dots {
+.page__main-slider .controls-slider-main__dots {
   flex: 1 1 auto;
 }
 @media (min-width: 991.98px) {
-  .controls-slider-main__dots {
+  .page__main-slider .controls-slider-main__dots {
     padding: 0 20px 0 0;
   }
 }
 @media (max-width: 991.98px) {
-  .controls-slider-main__dots {
+  .page__main-slider .controls-slider-main__dots {
     justify-content: center;
   }
 }
 @media (max-width: 991.98px) {
-  .controls-slider-main__arrows {
+  .page__main-slider .controls-slider-main__arrows {
     display: none;
   }
+}
+.advantages {
+  padding-top: calc(30px + (88 - 30) * ((100vw - 320 * 1px) / (1270 - 320)));
+  padding-bottom: calc(30px + (88 - 30) * ((100vw - 320 * 1px) / (1270 - 320)));
+}
+.advantages__container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.advantages__item {
+  display: inline-grid;
+  padding: 15px 0;
+  grid-template: auto auto / 85px 1fr;
+}
+@media (max-width: 991.98px) {
+  .advantages__item {
+    min-width: 280px;
+  }
+}
+@media (max-width: 767.98px) {
+  .advantages__item {
+    grid-template: auto auto / auto 1fr;
+  }
+}
+.advantages__icon {
+  text-align: center;
+  align-self: center;
+  grid-row: span 2;
+}
+@media (max-width: 991.98px) {
+  .advantages__icon {
+    padding: 0 15px 0 0;
+  }
+}
+.advantages__title {
+  font-family: Gilroy-Medium;
+  font-size: 18px;
+  line-height: 150%;
+  margin: 0 0 calc(2 / 18 * 1em) 0;
+}
+.advantages__text {
+  line-height: 150%;
+  color: #898989;
 }

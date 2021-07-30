@@ -4,6 +4,7 @@
      <v-header></v-header>
      <main class="page">
             <v-main-slider></v-main-slider>
+            <v-advantages></v-advantages>
         </main>
      <v-footer></v-footer>
      </div>
@@ -17,6 +18,8 @@ import VMainSlider from './components/VMainSlider.vue'
 
 import VHeader from './components/VHeader.vue'
 import VFooter from './components/VFooter.vue'
+import VAdvantages from './components/VAdvantages.vue'
+
 
 
 export default {
@@ -26,6 +29,7 @@ export default {
         VHeader,
         VFooter,
         VMainSlider,
+        VAdvantages,
 	},
 	data(){
 		

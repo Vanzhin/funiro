@@ -159,7 +159,6 @@ DynamicAdapt.prototype.arraySort = function (arr) {
 
 window.onload = function () {
 	var mainNav = document.querySelector('.header');
-	console.log(window.screen.width);
 	window.onscroll = function () {
 		windowScroll();
 	};
