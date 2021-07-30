@@ -156,3 +156,22 @@ DynamicAdapt.prototype.arraySort = function (arr) {
 		return;
 	}
 };
+
+window.onload = function () {
+	var mainNav = document.querySelector('.header');
+	console.log(window.screen.width);
+	window.onscroll = function () {
+		windowScroll();
+	};
+
+	function windowScroll() {
+		if (window.screen.width > 991.98) {
+			mainNav.classList.toggle("_scroll", mainNav.scrollTop > 40 || document.documentElement.scrollTop > 40);		
+		} 
+		else {
+			mainNav.classList.toggle("_scroll", mainNav.scrollTop > 5 || document.documentElement.scrollTop > 5);
+			}
+
+
+	}
+}
