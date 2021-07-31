@@ -257,7 +257,7 @@ a {
   z-index: 50;
 }
 .header__body {
-  transition: min-height 0.3s ease 0s;
+  transition: min-height 0.5s ease 0s;
   display: flex;
   align-items: center;
   padding: 5px 0;
