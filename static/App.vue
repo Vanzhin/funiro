@@ -14,7 +14,6 @@
 
 <script>
 
-
 import VMainSlider from './components/VMainSlider.vue'
 
 import VHeader from './components/VHeader.vue'
@@ -35,7 +34,21 @@ export default {
         VProducts,
 	},
 	data(){
+		return{
+         
+			
+	}
 		
-            }
+	},
+    methods: {
+       
+        
+        
+            
+            
+        },
+    created() {
+        }
+
 }
 </script>

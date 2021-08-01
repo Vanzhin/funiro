@@ -1,9 +1,14 @@
 <template>
 	<div class="products__items">
-					<article :data-pid="preparedItems.id" class="products__item item-product" v-for="item in preparedItems" v-bind:key="item.id">
+					<article class="products__item item-product" v-for="item in preparedItems" v-bind:key="item.id">
 						<div class="item-product__labels">
-							<div class="item-product__label item-product__label_sale">{{item.label_sale}}</div>
-							<div class="item-product__label item-product__label_new">{{item.label_new}}</div>
+							<div 
+							 class="item-product__label item-product__label_sale" 
+							 v-if="!item.no_label_sale" 
+							 >{{item.label_sale}}</div>
+							<div 
+							v-if="item.label_new"
+							class="item-product__label item-product__label_new">{{item.label_new}}</div>
 						</div>
 						<a href="" class="item-product__image _ibg">
 								<img :src="item.img" :alt="'product_'+item.id">
@@ -30,56 +35,29 @@
 	</div>
 </template>
 <script>
+let API_ROOT='http://localhost:3000/api';
+
 export default {
 	data(){
 		return{
+			API_ROOT:'http://localhost:3000/api',  
 			preparedItems: [],
-			items:[{
-			id:"1",
-			label_new:true,
-			img:"static/img/products/01.jpg",
-			title:"Syltherine",
-			text:"Stylish cafe chair",
-			price:2500000,
-			price_old:3500000
-		},
-		{
-			id:"2",
-			label_new:false,
-			img:"static/img/products/02.jpg",
-			title:"Leviosa",
-			text:"Stylish cafe chair",
-			price:2500000,
-			price_old:3500000
-		},
-		{
-			id:"3",
-			label_new:true,
-			img:"static/img/products/03.jpg",
-			title:"Lolito",
-			text:"Luxury big sofa",
-			price:7000000,
-			price_old:14000000
-		},{id:"4",
-			label_new:false,
-			img:"static/img/products/04.jpg",
-			title:"Respira",
-			text:"Minimalist fan",
-			price:500000,
-			price_old: ""
-		}],
+
+			
 
 	}
 		
 	},
      methods: {
-			divideNumberByPieces(x, delimiter) {
-  			return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, delimiter || " ");
-			},
-        
-            itemsDataPreparation() {
-				
-                this.items.forEach(element => {
+		//  toJson(){
+		// 	 let json = JSON.stringify(this.items);
+		// 	 console.log(json);
+
+
+		//  },
+			
+            itemsDataPreparation(items) {
+                items.forEach(element => {
 					const productData = {};
 					productData.id = (element.id);
 					productData.img = (element.img);
@@ -95,14 +73,10 @@ export default {
 
 					} else {
 						element.label_sale = "";
+						productData.no_label_sale = true;
 						element.price_old = '';
 						productData.label_sale = (element.label_sale);
 						productData.price_old = (element.price_old)
-
-
-						
-
-
 					};
 					if (element.label_new) {
 						element.label_new = "New"
@@ -112,12 +86,12 @@ export default {
 						productData.label_new = (element.label_new)
 					};
 					if(element.price){
-						element.price = this.divideNumberByPieces(element.price, ",");
-						productData.price = 'Rp ' + (element.price)		
+						element.price = element.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+						productData.price = 'Rp ' + (element.price);	
 						
 					};
 					if(element.price_old){
-						element.price_old = this.divideNumberByPieces(element.price_old, ",");
+						element.price_old = element.price_old.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 						productData.price_old = 'Rp ' + (element.price_old)		
 						
 					};
@@ -127,14 +101,28 @@ export default {
 
 
 				});
-				
-                console.log(this.preparedItems);
+			},
+			async fetchGoods() {
+				// let response = await fetch(`${API_ROOT}/productdata`);
+				// let fetchedItems = await response.json(); // читаем ответ в формате JSON
+				// this.itemsDataPreparation(fetchedItems);
+            try {
+                const res = await fetch(`${API_ROOT}/productdata`);
+				const fetchedItems = await res.json();
+				this.itemsDataPreparation(fetchedItems);
 
-            },
+            } catch (error) {
+                console.log(`Can't fetch data`, error);
+                throw new Error(error);
+            }
+        },
             
         },
         created() {
-            this.itemsDataPreparation();
+			this.fetchGoods();
+			// this.toJson();
+			
+			
         }
 
 }
