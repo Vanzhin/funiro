@@ -1084,6 +1084,14 @@ a {
   grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
   gap: 32px;
 }
+.products__footer {
+  padding: 32px 0 0 0;
+  text-align: center;
+}
+.products__more {
+  border: 1px solid #E89F71;
+  min-width: 245px;
+}
 .item-product {
   background: #f4f5f7;
   display: flex;

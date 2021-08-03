@@ -1,6 +1,8 @@
 <template>
 	<div class="products__items">
-					<article class="products__item item-product" v-for="item in preparedItems" v-bind:key="item.id">
+					<article class="products__item item-product" 
+					v-for="item in preparedItems" 
+					v-bind:key="item.id">
 						<div class="item-product__labels">
 							<div 
 							 class="item-product__label item-product__label_sale" 
@@ -32,7 +34,7 @@
 								</div>
 							</div>
 					</article>
-					<button v-on:click="addItems">жопа</button>
+					
 	</div>
 </template>
 <script>
@@ -61,7 +63,7 @@ export default {
 
 		//  },
 			
-            itemsDataPreparation(items) {
+            itemsDataPreparation(items,toArray) {// подготовка данных карточек товара для отображения верстки
                 items.forEach(element => {
 					const productData = {};
 					productData.id = (element.id);
@@ -70,7 +72,7 @@ export default {
 					productData.text = (element.text);
 					
 
-                    if (typeof element.price_old === 'number') {
+                    if (typeof element.price_old === 'number') {// если тип старой цены это номер  - считает какая скидка
 						element.label_sale = Math.floor((element.price_old - element.price) / element.price_old * 100) + "%";
 						productData.label_sale = (element.label_sale);
 						productData.price_old = (element.price_old)
@@ -90,17 +92,17 @@ export default {
 						element.label_new = '';
 						productData.label_new = (element.label_new)
 					};
-					if(element.price){
-						element.price = element.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+					if(element.price){// ставит точку при разделении на разряд
+						element.price = element.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 						productData.price = 'Rp ' + (element.price);	
 						
 					};
 					if(element.price_old){
-						element.price_old = element.price_old.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+						element.price_old = element.price_old.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");// ставит точку при разделении на разряд
 						productData.price_old = 'Rp ' + (element.price_old)		
 						
 					};
-					this.preparedItems.push(productData);
+					toArray.push(productData);//отправляю данные в массив
 
 					
 
@@ -113,9 +115,8 @@ export default {
 				// this.itemsDataPreparation(fetchedItems);
             try {
                 const res = await fetch(`${API_ROOT}/productdata`);
-				this.fetchedItems = await res.json();
-				console.log(this.fetchedItems);
-				this.addItems();
+				this.fetchedItems = await res.json();// получает данные с сервера из product-data.json
+				this.addItems();// сразу добавляет 4 карточки товара на страницу
 
 
 
@@ -124,7 +125,7 @@ export default {
                 throw new Error(error);
             }
 		},
-		cloneArr(array,itemQuantity){
+		cloneArr(array,itemQuantity){//копирует 4 объекта из выбранного массива, каждый раз сдвигается на 4.
 			const toArray = [];
 			const itemsToPush = array.slice((this.addItemsCounter*itemQuantity),(this.addItemsCounter*itemQuantity + itemQuantity));
 			this.addItemsCounter ++;
@@ -135,15 +136,13 @@ export default {
 			return toArray;
 
 		},
-		addItems(){
-			this.itemsDataPreparation(this.cloneArr(this.fetchedItems, this.itemsRerClick))
+		addItems(){//отправляет массив с объетами на обработку
+			this.itemsDataPreparation(this.cloneArr(this.fetchedItems, this.itemsRerClick),this.preparedItems)
 		}
             
         },
         created() {
-			this.fetchGoods();
-			// this.toJson();
-			
+			this.fetchGoods() // подгружает данные о товарах
 			
         }
 
