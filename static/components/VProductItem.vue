@@ -106,8 +106,11 @@ export default {
 
 					
 
+					
+
 
 				});
+				this.$emit('rendering');// посылает событие rendering родителю
 			},
 			async fetchGoods() {
 				// let response = await fetch(`${API_ROOT}/productdata`);
@@ -137,6 +140,7 @@ export default {
 
 		},
 		addItems(){//отправляет массив с объетами на обработку
+			this.$emit('rendering');// посылает событие rendering родителю
 			this.itemsDataPreparation(this.cloneArr(this.fetchedItems, this.itemsRerClick),this.preparedItems)
 		}
             

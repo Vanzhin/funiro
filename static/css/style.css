@@ -84,10 +84,39 @@
   display: flex;
   flex-direction: column;
 }
+@keyframes go-flash {
+  /* объявляем имя анимации: "flash" */
+  from {
+    color: #ffffff00;
+  }
+  to {
+    color: #898989;
+  }
+}
 ._container {
   max-width: 1270px;
   margin: 0 auto;
   padding: 0 15px;
+}
+._loading {
+  position: relative;
+}
+._loading::before {
+  content: 'loading...';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #ffffff7e;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #898989;
+  font-family: Gilroy-Medium;
+  font-size: 1.5em;
+  animation: go-flash 2s infinite alternate ease-out;
 }
 body {
   font-family: Gilroy-Regular;

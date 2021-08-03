@@ -53,6 +53,8 @@
 @grayColor: #898989;
 @darkGreyColor: #616161;
 
+
+
 //wrap
 .wrap{
     width: 100%;
@@ -65,23 +67,42 @@
     }
 };
 
-//main media set
+//animations
+@keyframes go-flash {        /* объявляем имя анимации: "flash" */
+    from { color: #ffffff00; }            
+    to { color: @grayColor;}
+  };
+
+
+//techhical classes
+
 ._container {
     max-width: @maxWidthContainer * 1px;
     margin: 0 auto;
     padding: 0 @paddingContainer * 1px;
 
-    // @media (max-width:@md1) {
-    //     max-width: 970px;
-    // };
-    // @media (max-width:@md2) {
-    //     max-width: 750px;
-    // };
-    // @media (max-width:@md3) {
-    //     max-width: none;
-    //     padding: 0 10px;
-    // };
+    
 };
+._loading{
+	position: relative;
+	&::before{
+		content: 'loading...';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top:0;
+		left:0;
+		background-color: #ffffff7e;
+		z-index: 100;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: @grayColor;
+		font-family: @font-medium;
+		font-size: 1.5em;
+		animation: go-flash 2s infinite alternate ease-out;
+	}
+}
 
 // common***********************************************************************************
 
@@ -1417,6 +1438,7 @@ flex: 1 1 auto;
 	// .products__container
 
 	&__container {
+		
 	}
 
 	// .products__title
@@ -1431,6 +1453,7 @@ flex: 1 1 auto;
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
 		gap: 32px;
+		
 
 	}
 

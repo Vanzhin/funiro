@@ -1,8 +1,13 @@
 <template>
 	<section class="page__products products">
-		<div class="products__container _container">
+		<div class="products__container _container" 
+		v-bind:class="[{_loading: loading},products__container, _container]"
+		>
 				<h2 class="products__title _title">Our Products</h2>
-				<v-product-item ref="child"></v-product-item>
+				<!-- принимает событие rendering из ребенка и меняет переменную loading, эта переменная есть в этом компоненте а разделе return -->
+				<v-product-item ref="child"
+				v-on:rendering="loading = !loading"
+></v-product-item>
 				<div class="products__footer">
 					<!-- кликаешь по ссылке а в этом компоненте, по клику исполняется метод ребенка, который прописан только в ребенке.
 						в ребенке это: <v-product-item ref="child"></v-product-item>
@@ -26,6 +31,7 @@ export default {
 	
 	data(){
 		return{
+			loading: false,
 	}
 		
 	},
