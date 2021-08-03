@@ -116,7 +116,7 @@ export default {
             try {
                 const res = await fetch(`${API_ROOT}/productdata`);
 				this.fetchedItems = await res.json();// получает данные с сервера из product-data.json
-				this.addItems();// сразу добавляет 4 карточки товара на страницу
+				this.addItems();// сразу добавляет 4 (itemsRerClick:4,) карточки товара на страницу
 
 
 
