@@ -32,6 +32,7 @@
 								</div>
 							</div>
 					</article>
+					<button v-on:click="addItems">жопа</button>
 	</div>
 </template>
 <script>
@@ -42,6 +43,10 @@ export default {
 		return{
 			API_ROOT:'http://localhost:3000/api',  
 			preparedItems: [],
+			fetchedItems:[],
+			itemsRerClick:4,
+			addItemsCounter:0,
+
 
 			
 
@@ -108,14 +113,31 @@ export default {
 				// this.itemsDataPreparation(fetchedItems);
             try {
                 const res = await fetch(`${API_ROOT}/productdata`);
-				const fetchedItems = await res.json();
-				this.itemsDataPreparation(fetchedItems);
+				this.fetchedItems = await res.json();
+				console.log(this.fetchedItems);
+				this.addItems();
+
+
 
             } catch (error) {
                 console.log(`Can't fetch data`, error);
                 throw new Error(error);
             }
-        },
+		},
+		cloneArr(array,itemQuantity){
+			const toArray = [];
+			const itemsToPush = array.slice((this.addItemsCounter*itemQuantity),(this.addItemsCounter*itemQuantity + itemQuantity));
+			this.addItemsCounter ++;
+			console.log(itemsToPush);
+			itemsToPush.forEach((item)=>{
+				toArray.push(item);
+			});
+			return toArray;
+
+		},
+		addItems(){
+			this.itemsDataPreparation(this.cloneArr(this.fetchedItems, this.itemsRerClick))
+		}
             
         },
         created() {
