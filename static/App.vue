@@ -119,8 +119,8 @@ export default {
             	try {
 					this.loading=true;
 
-                	const res = await fetch(`${API_ROOT}/productdata`);
-					this.fetchedItems = await res.json();// получает данные с сервера из product-data.json
+                	const res = await fetch(`${API_ROOT}/productdata`);// делает запрос productdata
+					this.fetchedItems = await res.json();// получает данные с сервера из product-data.json и переводит их в массив
 					this.showMore();// сразу добавляет 4 (itemsRerClick:4,) карточки товара на страницу
 
 
@@ -132,10 +132,9 @@ export default {
 			},
 			async fetchCart() {
             try {
-                const res = await fetch(`${API_ROOT}/cart`);
-                const cart = await res.json();
-                this.cart = cart;
-                console.log(this.cart, "this.cart from fetch");
+                const res = await fetch(`${API_ROOT}/cart`);// делает запрос по cart
+                const cart = await res.json(); //получает ответ и представляет его в формате массива с объектами
+                this.cart = cart;// приравнивает этот массив массиву cart
             } catch (error) {
                 console.log(`Can't fetch cart`, error);
                 throw new Error(error);
@@ -143,8 +142,8 @@ export default {
         },
         addItem(item) {
             fetch(`${API_ROOT}/cart`, {//делает запрос на сервер cart
-                method: 'POST',
-                body: JSON.stringify(item),
+                method: 'POST', 
+                body: JSON.stringify(item),//тело запроса (объект товара) переводит в формат JSON
                 headers: {
                     'Content-Type': 'application/json'
                 }
@@ -164,13 +163,12 @@ export default {
         },
 		async deleteItem(id) {
             const rawResponse = await fetch(`${API_ROOT}/cart/${id}`, {
-                method: 'DELETE',
+                method: 'DELETE',//запрос на удаление
             });
-            const response = await rawResponse.json();
+            const response = await rawResponse.json();// получает объект из массива с товарами и переводит из json в формат объекта
 
-            if (response.result !== 0) {
+            if (response.result !== 0) {// при получении ответа фильтует массив по id
                 this.cart = this.cart.filter((item) => parseInt(item.id) !== parseInt(id));
-                console.log(this.cart);
             } else {
                 console.error(`Can't remove item from basket`, item, this.cart);
             }
