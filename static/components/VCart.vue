@@ -34,7 +34,6 @@
 			</p>    
     </div>
 </div>
-
 </template>
 <script>
 export default {
