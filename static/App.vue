@@ -3,7 +3,8 @@
      <div class="wrap">
      <v-header
      v-bind:cart="cart"
-	 v-bind:total="total"></v-header>
+	 v-bind:total="total"
+	 v-on:delete-item="deleteItem"></v-header>
      <main class="page">
             <v-main-slider></v-main-slider>
             <v-advantages></v-advantages>
@@ -160,6 +161,19 @@ export default {
                         console.error(`Can't add item to basket`, item, this.cart);
                     }
                 })
+        },
+		async deleteItem(id) {
+            const rawResponse = await fetch(`${API_ROOT}/cart/${id}`, {
+                method: 'DELETE',
+            });
+            const response = await rawResponse.json();
+
+            if (response.result !== 0) {
+                this.cart = this.cart.filter((item) => parseInt(item.id) !== parseInt(id));
+                console.log(this.cart);
+            } else {
+                console.error(`Can't remove item from basket`, item, this.cart);
+            }
         },
 		cloneArr(array,itemQuantity){//копирует 4 объекта из выбранного массива, каждый раз сдвигается на 4 (itemQuantity).
 			const toArray = [];

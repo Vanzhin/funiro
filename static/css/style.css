@@ -122,6 +122,9 @@
   visibility: hidden;
   opacity: 0;
 }
+._transform0 {
+  transform: scale(0);
+}
 body {
   font-family: Gilroy-Regular;
   font-size: 16px;

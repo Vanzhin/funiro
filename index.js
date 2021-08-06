@@ -77,4 +77,36 @@ app.get('/api/cart', (req, res) => {
         })
     });
 });
+app.delete('/api/cart/:id', (req, res) => {
+  fs.readFile('dist/cart.json', 'utf-8', (err, data) => {
+      if (err) {
+          console.log('Read cart.json error!', err);
+          res.send('Read cart.json error!');
+          return;
+      }
+
+      let basket = JSON.parse(data);
+      console.log(basket, "basket1",basket.length);
+
+      const id = parseInt(req.params.id);
+      console.log(req.params, "req.params");
+
+      basket = basket.filter((item) => parseInt(item.id) !== id);
+      console.log(basket, "basket2",basket.length);
+
+
+      fs.writeFile('dist/cart.json', JSON.stringify(basket), (err) => {
+          if (err) {
+              console.log('Write cart.json error!', err);
+              res.json({
+                  status: 0,
+                  message: 'Write cart.json error!',
+                  error: err,
+              });
+              return;
+          }
+          res.json({ status: 1 });
+      })
+  });
+});
 

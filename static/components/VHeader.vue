@@ -57,7 +57,9 @@
                             <a href="#" class="actions-header__item actions-header__item_favorites _icon-favorite"></a>
                             <v-cart
                             v-bind:cart="cart"
-                            v-bind:total="total"></v-cart>
+                            v-bind:total="total"
+					        v-on:delete="$emit('delete-item', $event)"
+                            ></v-cart>
                             <a href="#" class="actions-header__item actions-header__item_user">
                                 <img src="static/img/IMG_1534.png" alt="avatar">
                             </a>
