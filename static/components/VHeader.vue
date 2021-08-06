@@ -55,12 +55,9 @@
                         </div>
                         <div class="header__actions actions-header">
                             <a href="#" class="actions-header__item actions-header__item_favorites _icon-favorite"></a>
-                            <div class="actions-header__item cart-header">
-                                <a href="#" class="cart-header__icon _icon-cart"><span>1</span></a>
-                                <div class="cart-header__body">
-                                    <ul class="cart-header__list cart-list"></ul>    
-                                </div>
-                            </div>
+                            <v-cart
+                            v-bind:cart="cart"
+                            v-bind:total="total"></v-cart>
                             <a href="#" class="actions-header__item actions-header__item_user">
                                 <img src="static/img/IMG_1534.png" alt="avatar">
                             </a>
@@ -77,5 +74,34 @@
         </header>
 </template>
 <script>
+import VCart from './VCart.vue'
+export default {
+    props: ['cart', 'total'],
+	name:'VHeader',
+	components: {
+        
+		VCart,
+	},
+
+	
+	data(){
+		return{
+			
+	}
+		
+	},
+     methods: {
+			
+            
+		
+
+
+            
+        },
+        created() {
+			
+			
+        }
+}
 
 </script>

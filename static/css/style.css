@@ -108,7 +108,7 @@
   height: 100%;
   top: 0;
   left: 0;
-  background-color: #ffffff7e;
+  background-color: #ffffffaf;
   z-index: 100;
   display: flex;
   justify-content: center;
@@ -117,6 +117,10 @@
   font-family: Gilroy-Medium;
   font-size: 1.5em;
   animation: go-flash 2s infinite alternate ease-out;
+}
+._invisible {
+  visibility: hidden;
+  opacity: 0;
 }
 body {
   font-family: Gilroy-Regular;
@@ -1116,6 +1120,7 @@ a {
 .products__footer {
   padding: 32px 0 0 0;
   text-align: center;
+  transition: all 0.3s ease 0s;
 }
 .products__more {
   border: 1px solid #E89F71;
