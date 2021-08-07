@@ -59,6 +59,8 @@
                             v-bind:cart="cart"
                             v-bind:total="total"
 					        v-on:delete="$emit('delete-item', $event)"
+                            v-on:active="$emit('active-click')"
+                            v-bind:is-active="isActive"
                             ></v-cart>
                             <a href="#" class="actions-header__item actions-header__item_user">
                                 <img src="static/img/IMG_1534.png" alt="avatar">
@@ -78,7 +80,7 @@
 <script>
 import VCart from './VCart.vue'
 export default {
-    props: ['cart', 'total'],
+    props: ['cart', 'total','isActive'],
 	name:'VHeader',
 	components: {
         

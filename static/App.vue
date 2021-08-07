@@ -4,7 +4,11 @@
      <v-header
      v-bind:cart="cart"
 	 v-bind:total="total"
-	 v-on:delete-item="deleteItem"></v-header>
+	 v-on:delete-item="deleteItem"
+		v-on:active-click="activeChange"
+		v-bind:is-active="isActive"
+
+	 ></v-header>
      <main class="page">
             <v-main-slider></v-main-slider>
             <v-advantages></v-advantages>
@@ -54,7 +58,8 @@ export default {
 			cart:[],
 			itemsRerClick:4,
             addItemsCounter:0,
-            fullShow:false,
+			fullShow:false,
+			isActive: false,
 	}
 		
 	},
@@ -67,7 +72,9 @@ export default {
 		//  },
 
 		
-			
+			activeChange(){
+				this.isActive = !this.isActive;
+			},
             itemsDataPreparation(items,toArray) {// подготовка данных карточек товара для отображения верстки
                 items.forEach(element => {
 					const productData = {};

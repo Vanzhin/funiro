@@ -1,11 +1,15 @@
 <template>
 <div class="actions-header__item cart-header">
-    <a href="#" class="cart-header__icon _icon-cart">
+	
+    <a href="#" class="cart-header__icon _icon-cart"
+	
+		v-on:click.prevent="$emit('active',1)">
 		<span class="cart-header__span"
 		:class="{_transform0:!cart.length}"
 		>{{cart.length}}</span>
 	</a>
-    <div class="cart-header__body">
+    <div class="cart-header__body"
+	:class="{_active:isActive}">
 		<div class="cart-header__items"
 			v-if="cart.length">
 			<div class="cart-header__list cart-list"
@@ -18,6 +22,7 @@
 					<a href="" class="cart-list__title">{{item.title}}</a>
 					<div class="cart-list__price">
 						<p class="cart-list__item-quantity">{{item.quantity}}</p>
+						<p>&nbsp;X&nbsp;</p>
 						<p class="cart-list__item-price">{{item.price}}</p>
 					</div>
 					<a href="" class="cart-list__delete"
@@ -37,7 +42,7 @@
 </template>
 <script>
 export default {
-    	props: ['cart','total'],
+    	props: ['cart','total','isActive'],
 
 	data(){
 		return{
