@@ -24,13 +24,16 @@
 								</div>
 								<div class="item-product__actions actions-product">
 									<div class="actions-product__body">
-										<a href="" v-on:click.prevent="$emit('add',item)"
-										v-if="!isInCart"
-										class="actions-product__button btn btn_white">Add to cart</a>
 										<a href="" 
-										v-on:click.prevent="$emit('add',item)"
-										v-if="isInCart"
-										class="actions-product__button btn btn_white">In cart</a>
+											v-on:click.prevent="$emit('add',item)"
+											class="actions-product__button btn btn_white">
+											<span
+												v-if="isInCart">In cart
+											</span>
+											<span
+												v-if="!isInCart">Add to cart
+											</span>
+										</a>
 										<a href="" class="actions-product__link _icon-share">Share</a>
 										<a href="" class="actions-product__link _icon-favorite">Like</a>
 									</div>
