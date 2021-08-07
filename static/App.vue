@@ -75,6 +75,19 @@ export default {
 			activeChange(){
 				this.isActive = !this.isActive;
 			},
+
+			
+			activeRemove(targetClosest, classListContains, removeFrom){
+
+ 				document.addEventListener('click', (e)=> {//удаляет класс _active с элемента removeFrom если нажатие происходит не по элементам в условии
+
+				if(!e.target.closest(targetClosest) && !e.target.classList.contains(classListContains)){
+				document.querySelector(removeFrom).classList.remove('_active');
+				}
+				 })
+
+
+			},
             itemsDataPreparation(items,toArray) {// подготовка данных карточек товара для отображения верстки
                 items.forEach(element => {
 					const productData = {};
@@ -215,6 +228,7 @@ export default {
         created() {
 			this.fetchGoods(); // подгружает данные о товарах
 			this.fetchCart(); // подгружает данные о товарах в корзине
+			this.activeRemove('.cart-header','actions-product__button','.cart-header__body');
 
 			
         }

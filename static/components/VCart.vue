@@ -3,7 +3,7 @@
 	
     <a href="#" class="cart-header__icon _icon-cart"
 	
-		v-on:click.prevent="$emit('active',1)">
+		v-on:click.prevent="$emit('active')">
 		<span class="cart-header__span"
 		:class="{_transform0:!cart.length}"
 		>{{cart.length}}</span>
@@ -32,7 +32,7 @@
 			</div>
 		</div>        
 		<div 
-			v-if="!cart.length" class="cart-header__empty">there is no goods in here :(
+			v-if="!cart.length" class="cart-header__empty">there are no goods here :(
 		</div>
         	<p v-if="cart.length"
 				class="cart-list__total-price">Total: {{total}}
