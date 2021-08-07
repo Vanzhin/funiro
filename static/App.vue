@@ -19,10 +19,8 @@
             v-bind:full-show="fullShow"
 			v-on:add-item="addItem"
 			v-bind:cart="cart"
-
-
-
             ></v-products>
+			<v-rooms></v-rooms>
         </main>
      <v-footer></v-footer>
      </div>
@@ -38,6 +36,9 @@ import VHeader from './components/VHeader.vue'
 import VFooter from './components/VFooter.vue'
 import VAdvantages from './components/VAdvantages.vue'
 import VProducts from './components/VProducts.vue'
+import VRooms from './components/VRooms.vue'
+
+
 
 
 
@@ -49,7 +50,8 @@ export default {
         VFooter,
         VMainSlider,
         VAdvantages,
-        VProducts,
+		VProducts,
+		VRooms,
 	},
 		data(){
 		return{

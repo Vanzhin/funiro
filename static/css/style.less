@@ -1202,6 +1202,12 @@ flex: 1 1 auto;
 
 	&__products {
 	}
+	
+
+		// .page__rooms
+	
+		&__rooms {
+		}
 }
 .page__main-slider{
 
@@ -1801,3 +1807,158 @@ flex: 1 1 auto;
 	}
 }
 
+// rooms***************************************************************************************
+.rooms {
+	background: #fcf8f3;
+	padding-bottom: calc(30px + (44 - 30) * ((100vw - @minWidth * 1px) / (@maxWidthContainer - @minWidth)));
+	padding-top: calc(30px + (44 - 30) * ((100vw - @minWidth * 1px) / (@maxWidthContainer - @minWidth)));
+
+	// .rooms__container
+
+	&__container {
+		@media (min-width: @md2 * 1px) {
+			display: flex;
+		}
+	}
+
+	// .rooms__body
+
+	&__body {
+		flex: 0 0 calc(465 / @md1 * 100%);
+		position: relative;
+		z-index: 5;
+		align-self: center;
+		@media (min-width: @md2 * 1px) {
+			padding-right: calc(30px + (80 - 30) * ((100vw - @minWidth * 1px) / (@maxWidthContainer - @minWidth)));
+		}
+	}
+
+	// .rooms__title
+
+	&__title {
+		text-align: left;
+		&:not(:last-child){
+		margin: 0 0 calc(8 / 40 * 1em) 0;
+		}
+	}
+
+	// .rooms__text
+
+	&__text {
+		line-height: 150%;
+		font-family: @font-medium;
+		&:not(:last-child){
+			margin: 0 0 24px 0;
+		}
+	}
+
+	// .rooms__button
+
+	&__button {
+		background: @orangeColor;
+		color: #ffffff;
+		min-width: 180px;
+		@media (any-hover: hover) {
+			&:hover{
+				background-color: #8d6146;
+				
+			}
+		}
+
+
+	}
+
+	// .rooms__slider
+
+	&__slider {
+		flex: 1 1 auto;
+		min-width: 0;
+		align-self: flex-start;
+
+
+	}
+
+
+.slider-rooms {
+
+	// .slider-rooms__body
+
+	&__body {
+	}
+
+	// .slider-rooms__slide
+
+	&__slide {
+	}
+
+	// .slider-rooms__image
+
+	&__image {
+		width: 0;
+		
+
+	}
+
+	// .slider-rooms__content
+
+	&__content {
+	}
+
+	// .slider-rooms__label
+
+	&__label {
+	}
+
+	// .slider-rooms__title
+
+	&__title {
+	}
+
+	// .slider-rooms__arrows
+
+	&__arrows {
+	}
+
+	// .slider-rooms__dotts
+
+	&__dotts {
+	}
+}
+.label-slider {
+
+	// .label-slider__number
+
+	&__number {
+	}
+
+	// .label-slider__line
+
+	&__line {
+	}
+
+	// .label-slider__text
+
+	&__text {
+	}
+}
+.slider-arrows {
+}
+.slider-arrow {
+
+	// .slider-arrow_white
+
+	&_white {
+	}
+
+	// .slider-arrow_prev
+
+	&_prev {
+	}
+
+	// .slider-arrow_next
+
+	&_next {
+	}
+}
+
+}

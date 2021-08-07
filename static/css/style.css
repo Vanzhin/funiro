@@ -1347,3 +1347,55 @@ a {
     color: #E89F71;
   }
 }
+.rooms {
+  background: #fcf8f3;
+  padding-bottom: calc(30px + (44 - 30) * ((100vw - 320 * 1px) / (1270 - 320)));
+  padding-top: calc(30px + (44 - 30) * ((100vw - 320 * 1px) / (1270 - 320)));
+}
+@media (min-width: 991.98px) {
+  .rooms__container {
+    display: flex;
+  }
+}
+.rooms__body {
+  flex: 0 0 calc(465 / calc(1270 + 12) * 100%);
+  position: relative;
+  z-index: 5;
+  align-self: center;
+}
+@media (min-width: 991.98px) {
+  .rooms__body {
+    padding-right: calc(30px + (80 - 30) * ((100vw - 320 * 1px) / (1270 - 320)));
+  }
+}
+.rooms__title {
+  text-align: left;
+}
+.rooms__title:not(:last-child) {
+  margin: 0 0 calc(8 / 40 * 1em) 0;
+}
+.rooms__text {
+  line-height: 150%;
+  font-family: Gilroy-Medium;
+}
+.rooms__text:not(:last-child) {
+  margin: 0 0 24px 0;
+}
+.rooms__button {
+  background: #E89F71;
+  color: #ffffff;
+  min-width: 180px;
+}
+@media (any-hover: hover) {
+  .rooms__button:hover {
+    background-color: #8d6146;
+  }
+}
+.rooms__slider {
+  flex: 1 1 auto;
+  min-width: 0;
+  align-self: flex-start;
+}
+.rooms .slider-rooms__image {
+  width: 0;
+}
