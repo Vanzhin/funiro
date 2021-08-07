@@ -25,7 +25,12 @@
 								<div class="item-product__actions actions-product">
 									<div class="actions-product__body">
 										<a href="" v-on:click.prevent="$emit('add',item)"
+										v-if="!isInCart"
 										class="actions-product__button btn btn_white">Add to cart</a>
+										<a href="" 
+										v-on:click.prevent="$emit('add',item)"
+										v-if="isInCart"
+										class="actions-product__button btn btn_white">In cart</a>
 										<a href="" class="actions-product__link _icon-share">Share</a>
 										<a href="" class="actions-product__link _icon-favorite">Like</a>
 									</div>
@@ -39,7 +44,22 @@
 <script>
 
 export default {
-	props: ['item'],
+	props: ['item', "cart"],
+	methods:{
+		
+		
+	},
+	computed: { //раздел экземпляра, где вычисления происходят при обновлении данных
+		isInCart(){
+			const itemIndex = this.cart.findIndex((goodsItem) => goodsItem.id === this.item.id);//перебирает массив cart и смотрит, если id элемента корзины равен  id элемента товара, если совпадение выдает индекс элемента, если нет то -1	
+			if (itemIndex > -1) {
+				return true
+            } else { //если товара нет в корзине то вносит его в корзину с количеством 1
+				return false
+            }
+		}
+	}
+	
 
 	
 }

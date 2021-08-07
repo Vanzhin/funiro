@@ -55,8 +55,12 @@ app.get('/api/cart', (req, res) => {
         const itemIndex = cart.findIndex((goodsItem) => goodsItem.id === item.id);// возвращает -1 если такого объекта нет и индекс объекта в массиве, если такой объект там есть
         if (itemIndex > -1) { 
             cart[itemIndex].quantity += 1;// увеличиваем количество на 1
+            cart[itemIndex].incart= true;
+
         } else {
-            cart.push({ ...item, quantity: 1 });// добавляем объект в корзину с количеством 1, если его еще нет
+            // cart.push({ ...item, quantity: 1 });// добавляем объект в корзину с количеством 1, если его еще нет
+            cart.push({ ...item, quantity: 1, incart: true});
+
         }
 
 

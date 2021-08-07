@@ -18,6 +18,8 @@
             v-bind:loading="loading"
             v-bind:full-show="fullShow"
 			v-on:add-item="addItem"
+			v-bind:cart="cart"
+
 
 
             ></v-products>
@@ -60,7 +62,7 @@ export default {
             addItemsCounter:0,
 			fullShow:false,
 			isActive: false,
-	}
+		}
 		
 	},
           methods: {
@@ -172,12 +174,12 @@ export default {
                     if (response.result !== 0) {// при получении ответа
 						const itemIndex = this.cart.findIndex((goodsItem) => goodsItem.id === item.id);//выводит индекс элемента, если такой есть в корзине, если нет, то выводит -1
                         if (itemIndex > -1) {
-                            this.cart[itemIndex].quantity += 1;// если товар есть в корзине то увеличивает количество на 1
+							this.cart[itemIndex].quantity += 1;// если товар есть в корзине то увеличивает количество на 1
                         } else { //если товара нет в корзине то вносит его в корзину с количеством 1
-                            this.cart.push({ ...item, quantity: 1 });
+							this.cart.push({ ...item, quantity: 1});
                         }
                     } else {
-                        console.error(`Can't add item to basket`, item, this.cart);
+                        console.error(`Can't add item to cart`, item, this.cart);
                     }
                 })
         },

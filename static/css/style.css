@@ -1315,6 +1315,12 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  width: none;
+}
+@media (any-hover: hover) {
+  .actions-product__body {
+    width: 70%;
+  }
 }
 .actions-product__button {
   flex: 1 1 100%;

@@ -6,9 +6,10 @@
 				<h2 class="products__title _title">Our Products</h2>
 				<div class="products__items">
 					<v-product-item
-					v-for="item in preparedItems" 
+					v-for="item in preparedItems"
 					v-bind:key="item.id"
 					v-bind:item="item"
+					v-bind:cart="cart"
 					v-on:add="$emit('add-item', $event)"
 				></v-product-item>
 					</div>
@@ -36,7 +37,7 @@ export default {
         
 		VProductItem,
 	},
-props: ['loading', 'preparedItems','fullShow'],
+props: ['loading', 'preparedItems','fullShow','cart'],
 	
 
 }
