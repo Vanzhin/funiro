@@ -27,6 +27,8 @@
 			v-bind:rooms="rooms"
 			>
 			</v-rooms>
+			<v-tips>
+			</v-tips>
         </main>
      <v-footer></v-footer>
      </div>
@@ -43,6 +45,8 @@ import VFooter from './components/VFooter.vue'
 import VAdvantages from './components/VAdvantages.vue'
 import VProducts from './components/VProducts.vue'
 import VRooms from './components/VRooms.vue'
+import VTips from './components/VTips.vue'
+
 
 
 
@@ -58,6 +62,7 @@ export default {
         VAdvantages,
 		VProducts,
 		VRooms,
+		VTips,
 	},
 		data(){
 		return{

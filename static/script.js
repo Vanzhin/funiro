@@ -65,6 +65,35 @@ const swiper1 = new Swiper('.slider-main__body', {
 
   
   });
+  const swiper3 = new Swiper('.slider-tips', {
+    // Optional parameters
+    loop: true,
+    observer: true,
+    observerParents: true,
+    slidesPerView: 3,
+    spaceBetween: 32,
+    watchOverflow: true,
+    speed: 800,
+    preloadImages: false,
+    parallax: true,
+    loopAdditionalSlides: 5,
+
+  
+    // If we need pagination
+    pagination: {
+      el: '.slider-tips__dotts',
+      clickable: 'true',
+    },
+  
+    // Navigation arrows
+    navigation: {
+      nextEl: '.slider-tips .slider-arrow_next',
+      prevEl: '.slider-tips .slider-arrow_prev',
+    },
+
+  
+  });
+
 
 // dynamic adaptive initialization
     const da = new DynamicAdapt("max");
