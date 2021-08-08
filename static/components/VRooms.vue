@@ -10,41 +10,11 @@ inspiration</h2>
 			<div class="rooms__slider slider-rooms">
 				<div class="slider-rooms__body">
 					<div class="slider-rooms__slide swiper-wrapper">
-						<div class="slider-rooms__image swiper-slide _ibg">
-							<img src="/static/img/rooms/01.jpg" alt="01">
-							<a class="slider-rooms__content _icon-arrow-link"
-							data-swiper-parallax-y="-100%" data-swiper-parallax-opacity="0">
-								<div class="slider-rooms__label label-slider">
-									<div class="label-slider__number">01</div>
-									<div class="label-slider__line"></div>
-									<div class="label-slider__text">Bed room</div>
-								</div>
-								<div class="slider-rooms__title">Inner peace</div>
-							</a>
-						</div>
-						<div class="slider-rooms__image swiper-slide _ibg">
-							<img src="/static/img/rooms/02.jpg" alt="01">
-							<a class="slider-rooms__content _icon-arrow-link"
-							data-swiper-parallax-y="-100%" data-swiper-parallax-opacity="0">
-								<div class="slider-rooms__label label-slider">
-									<div class="label-slider__number">01</div>
-									<div class="label-slider__line"></div>
-									<div class="label-slider__text">Bed room</div>
-								</div>
-								<div class="slider-rooms__title">Inner peace</div>
-							</a>
-						</div>
-						<div class="slider-rooms__image swiper-slide _ibg">
-							<img src="/static/img/rooms/03.jpg" alt="01">
-							<a class="slider-rooms__content _icon-arrow-link" data-swiper-parallax-y="-100%" data-swiper-parallax-opacity="0">
-								<div class="slider-rooms__label label-slider">
-									<div class="label-slider__number">01</div>
-									<div class="label-slider__line"></div>
-									<div class="label-slider__text">Bed room</div>
-								</div>
-								<div class="slider-rooms__title">Inner peace</div>
-							</a>
-						</div>
+					<v-room
+					v-for="item in rooms"
+					v-bind:key="item.id"
+					v-bind:item="item"
+						></v-room>
 					</div>
 					<div class="slider-rooms__arrows slider-arrows">
 						<button type = "button" class="slider-arrow slider-arrow_white slider-arrow_prev _icon-arrow-down"></button>
@@ -58,3 +28,20 @@ inspiration</h2>
 		</div>
 	</section>
 </template>
+<script>
+
+import VRoom from './VRoom.vue'
+export default {
+
+	name:'VRooms',
+	components: {
+        
+		VRoom,
+	},
+props: ['rooms'],
+	
+
+}
+
+
+</script>

@@ -20,7 +20,10 @@
 			v-on:add-item="addItem"
 			v-bind:cart="cart"
             ></v-products>
-			<v-rooms></v-rooms>
+			<v-rooms
+			v-bind:rooms="rooms"
+			>
+			</v-rooms>
         </main>
      <v-footer></v-footer>
      </div>
@@ -64,6 +67,11 @@ export default {
             addItemsCounter:0,
 			fullShow:false,
 			isActive: false,
+			rooms:[
+				{id:1,src:'/static/img/rooms/01.jpg',text:'Bed room',title:'Inner peace'},
+				{id:2,src:'/static/img/rooms/02.jpg',text:'Kitchen room',title:'Inner peace'},
+				{id:3,src:'/static/img/rooms/03.jpg',text:'Guest room',title:'Inner peace'}
+			],
 		}
 		
 	},
