@@ -45,12 +45,8 @@
                                             <div class="slider-main__text">Luxury big sofa 2-seat</div>
                                             <div class="slider-main__price _icon-arrow-link">Rp 17.000.000</div>
                                     </a>
-                                    </div>
-                                    
-                                    
+                                    </div> 
                                 </div>
-                                
-                                
                             </div>
                             
                         </div>

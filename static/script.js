@@ -10,13 +10,13 @@ new Vue({
     render: h => h(App),
 }).$mount('#app');
 
-const swiper = new Swiper('.slider-main__body', {
+const swiper1 = new Swiper('.slider-main__body', {
     // Optional parameters
     direction: 'horizontal',
     loop: true,
     observer: true,
     observerParents: true,
-    slidesPerView: 1,
+    slidesPerView: 'auto',
     spaceBetween: 32,
     watchOverflow: true,
     speed: 800,
@@ -31,8 +31,36 @@ const swiper = new Swiper('.slider-main__body', {
   
     // Navigation arrows
     navigation: {
-      nextEl: '.slider-arrow_next',
-      prevEl: '.slider-arrow_prev',
+      nextEl: '.slider-main .slider-arrow_next',
+      prevEl: '.slider-main .slider-arrow_prev',
+    },
+
+  
+  });
+  const swiper2 = new Swiper('.slider-rooms__body', {
+    // Optional parameters
+    loop: true,
+    observer: true,
+    observerParents: true,
+    slidesPerView: 'auto',
+    spaceBetween: 24,
+    watchOverflow: true,
+    speed: 800,
+    preloadImages: false,
+    parallax: true,
+    loopAdditionalSlides: 5,
+
+  
+    // If we need pagination
+    pagination: {
+      el: '.slider-rooms__dotts',
+      clickable: 'true',
+    },
+  
+    // Navigation arrows
+    navigation: {
+      nextEl: '.slider-rooms .slider-arrow_next',
+      prevEl: '.slider-rooms .slider-arrow_prev',
     },
 
   
