@@ -20,32 +20,11 @@
                             </div>
                             <div class="slider-main__body">
                                 <div class="slider-main__slide swiper-wrapper">
-                                    <div class="slider-main__image swiper-slide _ibg">
-                                        <img src="static/img/main-slider/01.jpg" alt="image">  
-                                        <a href="" data-swiper-parallax="-200" data-swiper-parallax-opacity="0"  class="slider-main__content">
-                                            <div class="slider-main__title">Bohauss</div>
-                                            <div class="slider-main__text">Luxury big sofa 2-seat</div>
-                                            <div class="slider-main__price _icon-arrow-link">Rp 17.000.000</div>
-                                        </a>
-                                    </div>
-                                    
-                                    <div class="slider-main__image swiper-slide _ibg">
-                                        <img src="static/img/main-slider/02.jpg" alt="image">  
-                                    <a href=""  data-swiper-parallax="-200" data-swiper-parallax-opacity="0" class="slider-main__content">
-                                            <div class="slider-main__title">Bohauss</div>
-                                            <div class="slider-main__text">Luxury big sofa 2-seat</div>
-                                            <div class="slider-main__price _icon-arrow-link">Rp 17.000.000</div>
-                                    </a>
-                                    </div>
-                                    
-                                    <div class="slider-main__image swiper-slide _ibg">
-                                        <img src="static/img/main-slider/03.jpg" alt="image">  
-                                    <a href="" data-swiper-parallax="-200" data-swiper-parallax-opacity="0" class="slider-main__content">
-                                            <div class="slider-main__title">Bohauss</div>
-                                            <div class="slider-main__text">Luxury big sofa 2-seat</div>
-                                            <div class="slider-main__price _icon-arrow-link">Rp 17.000.000</div>
-                                    </a>
-                                    </div> 
+                                <v-slider
+                                v-for="item in slides"
+					            v-bind:key="item.id"
+					            v-bind:item="item"
+                                ></v-slider>
                                 </div>
                             </div>
                             
@@ -54,3 +33,21 @@
                 </div>
             </section>	
 </template>
+<script>
+
+import VSlider from './VSlider.vue'
+export default {
+
+	name:'VMainSlider',
+	components: {
+        
+		VSlider,
+	},
+props: ['slides'],
+	
+
+}
+
+
+</script>
+

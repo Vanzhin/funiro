@@ -10,7 +10,10 @@
 
 	 ></v-header>
      <main class="page">
-            <v-main-slider></v-main-slider>
+            <v-main-slider
+			v-bind:slides="slides"
+
+			></v-main-slider>
             <v-advantages></v-advantages>
             <v-products
             v-bind:prepared-items="preparedItems"
@@ -72,6 +75,11 @@ export default {
 				{id:2,src:'/static/img/rooms/02.jpg',text:'Kitchen room',title:'Inner peace'},
 				{id:3,src:'/static/img/rooms/03.jpg',text:'Guest room',title:'Inner peace'}
 			],
+			slides:[
+				{id:1,src:'static/img/main-slider/01.jpg',title:'Bohauss', text:'Luxury big sofa 2-seat',price:"Rp 17.000.000"},
+				{id:2,src:'static/img/main-slider/02.jpg',title:'Bohauss', text:'Luxury big sofa 2-seat',price:"Rp 17.000.000"},
+				{id:2,src:'static/img/main-slider/03.jpg',title:'Bohauss', text:'Luxury big sofa 2-seat',price:"Rp 17.000.000"},
+			]
 		}
 		
 	},
